@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import HSider from '../sider'
 import {Layout,Icon } from 'antd'
 import './index.css';
+import Login from '../login'
 
 const {Header,Content} = Layout;
 
@@ -46,7 +47,7 @@ class Home extends Component {
                }}
               >
               <div className = "app" >
-              {this.props.children}
+              {this.props.children || <Login/>}
               </div>  
         </Content>
         </Layout>       
