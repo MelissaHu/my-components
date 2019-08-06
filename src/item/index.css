@@ -1,0 +1,17 @@
+.item-selected {
+    line-height: 36px;
+    font-size: 18px;
+    text-indent: 2em;
+    background: #f1f1f1;
+}
+
+.item {
+    line-height: 36px;
+    font-size: 18px;
+    text-indent: 2em;
+}
+
+.item:hover {
+    background: #f1f1f1;
+    cursor: pointer;
+}
