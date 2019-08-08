@@ -1,25 +1,40 @@
 import React,{Component} from 'react'
-import { BrowserRouter as Router,Route,Redirect} from "react-router-dom"
-import Login from '../login'
-import Search from '../search'
-import Calculate from '../calculate'
+import { HashRouter as Router,Route,Switch} from "react-router-dom"
 import Home from '../home'
+import routes from './routes'
+import Login from '../login';
+
 
  class BasicRouter extends Component{
   
   // const BasicRouter = () => (  <IndexRoute  component={Login} />
-     render(){
-        return(
-           <Router>
-           <Home exact path="/" component={Home}>
-               <Redirect from= "/" to="login" />
-               <Route path="/login"  component={Login} />
-               <Route path="/search"  component={Search} />
-               <Route path="/calculate"  component={Calculate} /> 
+     render(){  //exact 是一种严格匹配模式
+        return( // switch 作用是当<Route>在路径相同的情况下，只匹配第一个，这个可以避免重复匹配
+           <Router> 
+            <Home  component={Home}>
+            <Switch> 
+              <Route exact path="/"  component={Login} /> 
+              {routes.map((item,index)=>{ 
+                  if(item.children){
+                    return(
+                      item.children.map((items,index2)=>{
+                         return(
+                           <Route path={items.path}  component={items.component} key={index2} /> 
+                         )
+                      })
+                      ) 
+                 }else{
+                    return(
+                       <Route path={item.path}  component={item.component} key={index} /> 
+                     )
+                 }
+               
+                
+     })}
+            </Switch>
             </Home>
           </Router> 
         )}
       }
-
-
+   
 export default BasicRouter;

@@ -24,7 +24,7 @@ class Search extends Component{
         return(
             <div className = "block" >
               <h1> Find My Fruit </h1> 
-               <Input onChange = { this.onChange.bind(this) }/>
+                <Input onChange = { this.onChange.bind(this) }/>
                 <List keyword = { this.state.keyword }/> 
               </div> 
         )

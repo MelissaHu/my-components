@@ -8,8 +8,6 @@ class Input extends Component{
           this.props.onChange && this.props.onChange(value); //父组件的方法
       }
 
-
-
      render(){
          return(
              <div className="input-container">

@@ -47,7 +47,7 @@ class Home extends Component {
                }}
               >
               <div className = "app" >
-              {this.props.children || <Login/>}
+              {this.props.children || '欢迎哦'}
               </div>  
         </Content>
         </Layout>       

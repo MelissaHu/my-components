@@ -1,7 +1,6 @@
-import React,{Component} from 'react'
-import Parent from '../parent'
+import React, { Component } from 'react'
 
-class Calculate extends Component{
+class Calculate extends Component {
     constructor() {
             super();
         }
@@ -9,11 +8,9 @@ class Calculate extends Component{
          * 入口函数
          * ReactDOM.render会将React原生写法的代码插入到html中生成Dom树
          */
-    render(){
-        return(
-            <div className = "block" >
-              <Parent />
-            </div>   
+    render() {
+        return (
+            this.props.children
         )
     }
 }
