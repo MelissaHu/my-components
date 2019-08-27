@@ -12,7 +12,7 @@ import List from '../order/list'
 import Double from '../calculate/double'
 import Temperature from '../calculate/temperature'
 import Func from '../func'
-
+import Count from '../calculate/count'
 
 export default [{
         path: '/login',
@@ -52,6 +52,11 @@ export default [{
                 name: '温度转换',
                 component: Temperature
             },
+            {
+                path: '/calculate/count',
+                name: '自增/自减',
+                component: Count
+            }
         ]
     }, {
         path: '/life',

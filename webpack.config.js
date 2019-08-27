@@ -21,6 +21,9 @@ module.exports = {
             test: /\.css$/,
             use: ['style-loader', 'css-loader']
         }, {
+            test: /\.(png|jpe?g|gif|svg|woff|eot|ttf)(\?.*)?$/,
+            loader: 'url-loader'
+        }, {
             test: /\.jsx?$/,
             exclude: /node_modules/,
             use: {
